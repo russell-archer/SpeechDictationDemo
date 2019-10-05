@@ -1,24 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SmE-0p-b8e">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Dictation-->
+        <scene sceneID="eOt-Cw-9qz">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController storyboardIdentifier="SpeechViewController" id="SmE-0p-b8e" customClass="SpeechViewController" customModule="SpeechDictationDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jED-wC-l6z">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2F3-y2-I4M">
+                                <rect key="frame" x="20" y="143" width="374" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Start Dictation"/>
+                                <connections>
+                                    <action selector="recordButtonTapped:" destination="SmE-0p-b8e" eventType="touchUpInside" id="8WI-ln-VtJ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="9ga-Gu-LXM">
+                                <rect key="frame" x="20" y="788" width="374" height="66"/>
+                                <string key="text">Speech recognition is limited to 60-second clips,  as recommended by Apple. An internet connection may be required and your speech may be sent to Apple servers for additional processing. Avoid speaking passwords, health or financial data, and other sensitive speech when the red "Recording" button is displayed. Text is automatically saved.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="TJk-Vp-z6O">
+                                <rect key="frame" x="345" y="104" width="51" height="31"/>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="On-device Speech Recognition Available" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s50-N7-Bhk">
+                                <rect key="frame" x="20" y="104" width="319" height="31"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1u8-om-AwM">
+                                <rect key="frame" x="20" y="190" width="374" height="590"/>
+                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2F3-y2-I4M" firstAttribute="leading" secondItem="hxj-Mw-Gsk" secondAttribute="leading" constant="20" id="1BS-vy-96m"/>
+                            <constraint firstItem="hxj-Mw-Gsk" firstAttribute="trailing" secondItem="TJk-Vp-z6O" secondAttribute="trailing" constant="20" id="28X-D8-EZr"/>
+                            <constraint firstItem="hxj-Mw-Gsk" firstAttribute="trailing" secondItem="9ga-Gu-LXM" secondAttribute="trailing" constant="20" id="4iU-31-JWu"/>
+                            <constraint firstItem="hxj-Mw-Gsk" firstAttribute="trailing" secondItem="1u8-om-AwM" secondAttribute="trailing" constant="20" id="7vs-mK-chM"/>
+                            <constraint firstItem="1u8-om-AwM" firstAttribute="top" secondItem="2F3-y2-I4M" secondAttribute="bottom" constant="8" id="8Ja-aa-pti"/>
+                            <constraint firstItem="TJk-Vp-z6O" firstAttribute="leading" secondItem="s50-N7-Bhk" secondAttribute="trailing" constant="6" id="AlY-D6-DjA"/>
+                            <constraint firstItem="9ga-Gu-LXM" firstAttribute="top" secondItem="1u8-om-AwM" secondAttribute="bottom" constant="8" id="Bim-ib-365"/>
+                            <constraint firstItem="2F3-y2-I4M" firstAttribute="top" secondItem="s50-N7-Bhk" secondAttribute="bottom" constant="8" id="Eer-bz-Xin"/>
+                            <constraint firstItem="s50-N7-Bhk" firstAttribute="leading" secondItem="hxj-Mw-Gsk" secondAttribute="leading" constant="20" id="J5s-sL-yvG"/>
+                            <constraint firstItem="2F3-y2-I4M" firstAttribute="top" secondItem="TJk-Vp-z6O" secondAttribute="bottom" constant="8" id="Psj-D4-13G"/>
+                            <constraint firstItem="hxj-Mw-Gsk" firstAttribute="bottom" secondItem="9ga-Gu-LXM" secondAttribute="bottom" constant="8" id="W7A-Ka-nM6"/>
+                            <constraint firstItem="9ga-Gu-LXM" firstAttribute="leading" secondItem="hxj-Mw-Gsk" secondAttribute="leading" constant="20" id="hOe-I3-H6E"/>
+                            <constraint firstItem="2F3-y2-I4M" firstAttribute="top" secondItem="TJk-Vp-z6O" secondAttribute="bottom" constant="8" id="iey-8f-AZa"/>
+                            <constraint firstItem="1u8-om-AwM" firstAttribute="leading" secondItem="hxj-Mw-Gsk" secondAttribute="leading" constant="20" id="jIz-oH-RDA"/>
+                            <constraint firstItem="hxj-Mw-Gsk" firstAttribute="trailing" secondItem="2F3-y2-I4M" secondAttribute="trailing" constant="20" id="tWE-6C-C6F"/>
+                            <constraint firstItem="TJk-Vp-z6O" firstAttribute="top" secondItem="hxj-Mw-Gsk" secondAttribute="top" constant="16" id="wfN-az-sZp"/>
+                            <constraint firstItem="s50-N7-Bhk" firstAttribute="top" secondItem="hxj-Mw-Gsk" secondAttribute="top" constant="16" id="xrF-lc-gCJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hxj-Mw-Gsk"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Dictation" id="cpi-G8-c2q">
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="trash" id="JaY-SY-TV6"/>
+                            <barButtonItem systemItem="action" id="MKF-mz-SHN"/>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="info" destination="9ga-Gu-LXM" id="iVz-eW-TPM"/>
+                        <outlet property="onDeviceRecognition" destination="TJk-Vp-z6O" id="Pfc-UL-ozw"/>
+                        <outlet property="recordButton" destination="2F3-y2-I4M" id="Uqi-D9-zB8"/>
+                        <outlet property="textView" destination="1u8-om-AwM" id="61u-gC-dp3"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WU3-bW-oam" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="371.01449275362324" y="87.723214285714278"/>
         </scene>
     </scenes>
 </document>
