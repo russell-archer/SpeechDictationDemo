@@ -56,17 +56,12 @@ open class SpeechHelper: NSObject {
                     self.delegate?.onDeviceRecog(isAvailable: self.speechRecognizer!.supportsOnDeviceRecognition)
                     self.delegate?.recordButtonUpdate(enable: true, title: nil, info: "Speech recognition ready", for: nil)
                     
-                case .denied:
-                    self.delegate?.recordButtonUpdate(enable: false, title: nil, info: "Speech recognition access denied", for: .disabled)
-                    
-                case .restricted:
-                    self.delegate?.recordButtonUpdate(enable: false, title: nil, info: "Speech recognition restricted", for: .disabled)
-                    
+                case .denied: fallthrough
+                case .restricted: fallthrough
                 case .notDetermined:
                     self.delegate?.recordButtonUpdate(enable: false, title: nil, info: "Speech recognition not authorized", for: .disabled)
                     
-                default:
-                    fatalError()
+                default: fatalError()
                 }
                 
                 

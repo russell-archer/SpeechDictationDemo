@@ -14,7 +14,8 @@ class SpeechViewController: UIViewController {
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var info: UILabel!
-    @IBOutlet weak var onDeviceRecognition: UISwitch!
+    @IBOutlet weak var usingOnDeviceRecog: UIView!
+    
     
     var defaultColor: UIColor!
     var defaultBgColor: UIColor!
@@ -25,6 +26,8 @@ class SpeechViewController: UIViewController {
         // Save the default colors of the start/stop button
         defaultColor = recordButton.tintColor
         defaultBgColor = recordButton.backgroundColor
+        
+        usingOnDeviceRecog.round()
         
         // Disable the record buttons until authorization has been granted.
         recordButton.isEnabled = false
@@ -57,7 +60,7 @@ class SpeechViewController: UIViewController {
 extension SpeechViewController: SpeechHelperProtocol {
 
     func recordButtonUpdate(enable: Bool, title: String?, info: String?, for state: UIControl.State?) {
-        print("Speech recognition is available")
+        print("Speech recognition available: \(enable)")
         recordButton.isEnabled = enable
         
         guard title != nil else { return }
@@ -65,12 +68,11 @@ extension SpeechViewController: SpeechHelperProtocol {
     }
     
     func onDeviceRecog(isAvailable: Bool) {
-        print("On-device recognition is available")
-        onDeviceRecognition.isOn = isAvailable
+        print("On-device recognition available: \(isAvailable)")
+        usingOnDeviceRecog.backgroundColor = isAvailable ? UIColor.green : UIColor.red
     }
     
     func textUpdate(text: String, isFinal: Bool){
-        print("Text update: \(text)")
         textView.text = text
     }
     
