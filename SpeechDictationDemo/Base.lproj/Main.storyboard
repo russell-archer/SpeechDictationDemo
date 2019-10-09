@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BGL-VJ-KNz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SmE-0p-b8e">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
@@ -15,61 +15,60 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tKH-Xe-DbI">
-                                <rect key="frame" x="20" y="108" width="10" height="10"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tKH-Xe-DbI" customClass="TrafficLightIndicator" customModule="SpeechDictationDemo" customModuleProvider="target">
+                                <rect key="frame" x="20" y="64" width="10" height="10"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="10" id="Lp7-i8-g5P"/>
                                     <constraint firstAttribute="width" constant="10" id="dSu-lS-vLr"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2F3-y2-I4M">
-                                <rect key="frame" x="20" y="130" width="374" height="39"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <state key="normal" title="Start Dictation"/>
-                                <connections>
-                                    <action selector="recordButtonTapped:" destination="SmE-0p-b8e" eventType="touchUpInside" id="8WI-ln-VtJ"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="9ga-Gu-LXM">
-                                <rect key="frame" x="20" y="788" width="374" height="66"/>
-                                <string key="text">Speech recognition is limited to 60-second clips,  as recommended by Apple. An internet connection may be required and your speech may be sent to Apple servers for additional processing. Avoid speaking passwords, health or financial data, and other sensitive speech when the red "Recording" button is displayed. Text is automatically saved.</string>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Using on-device speech recognition" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s50-N7-Bhk">
+                                <rect key="frame" x="38" y="62" width="356" height="14"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1u8-om-AwM">
-                                <rect key="frame" x="20" y="177" width="374" height="603"/>
+                                <rect key="frame" x="20" y="131" width="374" height="623"/>
                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Using on-device speech recognition" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s50-N7-Bhk">
-                                <rect key="frame" x="38" y="106" width="356" height="14"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="9ga-Gu-LXM">
+                                <rect key="frame" x="20" y="762" width="374" height="92"/>
+                                <string key="text">The amount of speech recognition is unlimited for devices running iOS 13 or higher. Some iPhones are capable of processing speech recognition entirely on-device, while others will require an internet connection in order that your speech may be sent to Apple servers for processing. Avoid speaking passwords, health or financial data, and other sensitive speech when the red "Stop Recognition" button is displayed.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2F3-y2-I4M" customClass="SpeechRecognitionButton" customModule="SpeechDictationDemo" customModuleProvider="target">
+                                <rect key="frame" x="20" y="84" width="374" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Start Recognition"/>
+                                <connections>
+                                    <action selector="recognitionButtonTapped:" destination="SmE-0p-b8e" eventType="touchUpInside" id="3AV-n6-har"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="s50-N7-Bhk" firstAttribute="leading" secondItem="tKH-Xe-DbI" secondAttribute="trailing" constant="8" id="29k-Sp-WBu"/>
-                            <constraint firstItem="tKH-Xe-DbI" firstAttribute="leading" secondItem="hxj-Mw-Gsk" secondAttribute="leading" constant="20" id="Ani-Nh-uFh"/>
-                            <constraint firstItem="1u8-om-AwM" firstAttribute="leading" secondItem="hxj-Mw-Gsk" secondAttribute="leading" constant="20" id="CAQ-ob-lY8"/>
-                            <constraint firstItem="s50-N7-Bhk" firstAttribute="leading" secondItem="tKH-Xe-DbI" secondAttribute="trailing" constant="8" id="E9Q-oT-53H"/>
-                            <constraint firstItem="s50-N7-Bhk" firstAttribute="top" secondItem="hxj-Mw-Gsk" secondAttribute="top" constant="18" id="Gxj-zF-X4v"/>
-                            <constraint firstItem="hxj-Mw-Gsk" firstAttribute="bottom" secondItem="9ga-Gu-LXM" secondAttribute="bottom" constant="8" id="IKc-79-aVJ"/>
-                            <constraint firstItem="2F3-y2-I4M" firstAttribute="top" secondItem="s50-N7-Bhk" secondAttribute="bottom" constant="10" id="IdB-AV-BSC"/>
-                            <constraint firstItem="hxj-Mw-Gsk" firstAttribute="trailing" secondItem="1u8-om-AwM" secondAttribute="trailing" constant="20" id="M38-1g-gXL"/>
-                            <constraint firstItem="hxj-Mw-Gsk" firstAttribute="trailing" secondItem="s50-N7-Bhk" secondAttribute="trailing" constant="20" id="OX5-EE-Xa0"/>
-                            <constraint firstItem="9ga-Gu-LXM" firstAttribute="leading" secondItem="hxj-Mw-Gsk" secondAttribute="leading" constant="20" id="OvQ-uy-9RW"/>
-                            <constraint firstItem="hxj-Mw-Gsk" firstAttribute="trailing" secondItem="2F3-y2-I4M" secondAttribute="trailing" constant="20" id="UlA-U0-zbK"/>
-                            <constraint firstItem="9ga-Gu-LXM" firstAttribute="top" secondItem="1u8-om-AwM" secondAttribute="bottom" constant="8" id="Ume-B2-Ers"/>
-                            <constraint firstItem="hxj-Mw-Gsk" firstAttribute="trailing" secondItem="9ga-Gu-LXM" secondAttribute="trailing" constant="20" id="bSe-sb-ioe"/>
-                            <constraint firstItem="tKH-Xe-DbI" firstAttribute="top" secondItem="hxj-Mw-Gsk" secondAttribute="top" constant="20" id="lsn-Sh-hGo"/>
-                            <constraint firstItem="2F3-y2-I4M" firstAttribute="leading" secondItem="hxj-Mw-Gsk" secondAttribute="leading" constant="20" id="lzf-B0-bE1"/>
-                            <constraint firstItem="1u8-om-AwM" firstAttribute="top" secondItem="2F3-y2-I4M" secondAttribute="bottom" constant="8" id="xy3-sA-MTq"/>
-                            <constraint firstItem="9ga-Gu-LXM" firstAttribute="top" secondItem="1u8-om-AwM" secondAttribute="bottom" constant="8" id="zwA-tS-2Jw"/>
+                            <constraint firstItem="hxj-Mw-Gsk" firstAttribute="bottom" secondItem="9ga-Gu-LXM" secondAttribute="bottom" constant="8" id="1Lu-U0-zES"/>
+                            <constraint firstItem="hxj-Mw-Gsk" firstAttribute="trailing" secondItem="2F3-y2-I4M" secondAttribute="trailing" constant="20" id="Fpp-MA-dru"/>
+                            <constraint firstItem="2F3-y2-I4M" firstAttribute="top" secondItem="s50-N7-Bhk" secondAttribute="bottom" constant="8" id="QeW-eF-wry"/>
+                            <constraint firstItem="hxj-Mw-Gsk" firstAttribute="trailing" secondItem="9ga-Gu-LXM" secondAttribute="trailing" constant="20" id="RZg-Af-zLW"/>
+                            <constraint firstItem="tKH-Xe-DbI" firstAttribute="leading" secondItem="hxj-Mw-Gsk" secondAttribute="leading" constant="20" id="RlA-WZ-Ahr"/>
+                            <constraint firstItem="s50-N7-Bhk" firstAttribute="leading" secondItem="tKH-Xe-DbI" secondAttribute="trailing" constant="8" id="U1L-eR-d3o"/>
+                            <constraint firstItem="s50-N7-Bhk" firstAttribute="top" secondItem="hxj-Mw-Gsk" secondAttribute="top" constant="18" id="VKE-26-qrO"/>
+                            <constraint firstItem="9ga-Gu-LXM" firstAttribute="top" secondItem="1u8-om-AwM" secondAttribute="bottom" constant="8" id="apT-ip-HSB"/>
+                            <constraint firstItem="9ga-Gu-LXM" firstAttribute="leading" secondItem="hxj-Mw-Gsk" secondAttribute="leading" constant="20" id="bX0-hZ-Hn4"/>
+                            <constraint firstItem="s50-N7-Bhk" firstAttribute="leading" secondItem="tKH-Xe-DbI" secondAttribute="trailing" constant="8" id="cEb-Q5-hmP"/>
+                            <constraint firstItem="1u8-om-AwM" firstAttribute="leading" secondItem="hxj-Mw-Gsk" secondAttribute="leading" constant="20" id="cpf-Jw-Y0W"/>
+                            <constraint firstItem="2F3-y2-I4M" firstAttribute="leading" secondItem="hxj-Mw-Gsk" secondAttribute="leading" constant="20" id="eQs-Sa-gt8"/>
+                            <constraint firstItem="1u8-om-AwM" firstAttribute="top" secondItem="2F3-y2-I4M" secondAttribute="bottom" constant="8" id="fWR-SW-Sfe"/>
+                            <constraint firstItem="hxj-Mw-Gsk" firstAttribute="trailing" secondItem="s50-N7-Bhk" secondAttribute="trailing" constant="20" id="gzO-ss-G8Q"/>
+                            <constraint firstItem="hxj-Mw-Gsk" firstAttribute="trailing" secondItem="1u8-om-AwM" secondAttribute="trailing" constant="20" id="leA-JG-Th7"/>
+                            <constraint firstItem="tKH-Xe-DbI" firstAttribute="top" secondItem="hxj-Mw-Gsk" secondAttribute="top" constant="20" id="tEk-n4-n6W"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hxj-Mw-Gsk"/>
                     </view>
@@ -79,35 +78,16 @@
                             <barButtonItem systemItem="action" id="MKF-mz-SHN"/>
                         </rightBarButtonItems>
                     </navigationItem>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="doOnDeviceRecognition" destination="tKH-Xe-DbI" id="4A0-af-t4a"/>
                         <outlet property="info" destination="9ga-Gu-LXM" id="iVz-eW-TPM"/>
-                        <outlet property="recordButton" destination="2F3-y2-I4M" id="Uqi-D9-zB8"/>
+                        <outlet property="recognitionButton" destination="2F3-y2-I4M" id="NaQ-Xa-0uu"/>
                         <outlet property="textView" destination="1u8-om-AwM" id="61u-gC-dp3"/>
-                        <outlet property="usingOnDeviceRecog" destination="tKH-Xe-DbI" id="gZv-2f-tVZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WU3-bW-oam" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1281.1594202898552" y="87.723214285714278"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="fvB-y3-VvP">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BGL-VJ-KNz" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2Bm-9K-zGa">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="SmE-0p-b8e" kind="relationship" relationship="rootViewController" id="mGP-1r-y9e"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0Cs-Uc-VxK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="371.01449275362324" y="87.723214285714278"/>
         </scene>
     </scenes>
 </document>

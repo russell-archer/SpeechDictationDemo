@@ -7,18 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		68752974234BA5D80057A2CC /* UIView+round.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68752973234BA5D80057A2CC /* UIView+round.swift */; };
+		68400B8B234BFF1700F9BA76 /* SpeechRecognitionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68400B8A234BFF1700F9BA76 /* SpeechRecognitionButton.swift */; };
+		68752976234BBB350057A2CC /* SpeechViewController+Recognition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68752975234BBB350057A2CC /* SpeechViewController+Recognition.swift */; };
+		68752978234BBBAD0057A2CC /* TrafficLightIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68752977234BBBAD0057A2CC /* TrafficLightIndicator.swift */; };
+		6875A51D234E61AF00EEF659 /* img1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6875A51C234E61AF00EEF659 /* img1.jpg */; };
 		68D377F523494E01000C6009 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D377F423494E01000C6009 /* AppDelegate.swift */; };
 		68D377F723494E01000C6009 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D377F623494E01000C6009 /* SceneDelegate.swift */; };
 		68D377FC23494E01000C6009 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68D377FA23494E01000C6009 /* Main.storyboard */; };
 		68D377FE23494E03000C6009 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68D377FD23494E03000C6009 /* Assets.xcassets */; };
 		68D3780123494E03000C6009 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68D377FF23494E03000C6009 /* LaunchScreen.storyboard */; };
 		68D3780A23494F70000C6009 /* SpeechViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D3780823494F70000C6009 /* SpeechViewController.swift */; };
-		68D3780B23494F70000C6009 /* SpeechHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D3780923494F70000C6009 /* SpeechHelper.swift */; };
+		68D3780B23494F70000C6009 /* SpeechRecognitionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D3780923494F70000C6009 /* SpeechRecognitionHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		68752973234BA5D80057A2CC /* UIView+round.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+round.swift"; sourceTree = "<group>"; };
+		68400B8A234BFF1700F9BA76 /* SpeechRecognitionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognitionButton.swift; sourceTree = "<group>"; };
+		68752975234BBB350057A2CC /* SpeechViewController+Recognition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SpeechViewController+Recognition.swift"; sourceTree = "<group>"; };
+		68752977234BBBAD0057A2CC /* TrafficLightIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficLightIndicator.swift; sourceTree = "<group>"; };
+		6875A51A234E5AF600EEF659 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		6875A51C234E61AF00EEF659 /* img1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = img1.jpg; sourceTree = "<group>"; };
 		68D377F123494E01000C6009 /* SpeechDictationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpeechDictationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68D377F423494E01000C6009 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		68D377F623494E01000C6009 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -27,7 +34,7 @@
 		68D3780023494E03000C6009 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		68D3780223494E03000C6009 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		68D3780823494F70000C6009 /* SpeechViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechViewController.swift; sourceTree = "<group>"; };
-		68D3780923494F70000C6009 /* SpeechHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechHelper.swift; sourceTree = "<group>"; };
+		68D3780923494F70000C6009 /* SpeechRecognitionHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechRecognitionHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,9 +48,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6875A51B234E5AFC00EEF659 /* readme-assets */ = {
+			isa = PBXGroup;
+			children = (
+				6875A51C234E61AF00EEF659 /* img1.jpg */,
+			);
+			path = "readme-assets";
+			sourceTree = "<group>";
+		};
 		68D377E823494E01000C6009 = {
 			isa = PBXGroup;
 			children = (
+				6875A51A234E5AF600EEF659 /* README.md */,
+				6875A51B234E5AFC00EEF659 /* readme-assets */,
 				68D377F323494E01000C6009 /* SpeechDictationDemo */,
 				68D377F223494E01000C6009 /* Products */,
 			);
@@ -63,9 +80,11 @@
 				68D3780223494E03000C6009 /* Info.plist */,
 				68D377F423494E01000C6009 /* AppDelegate.swift */,
 				68D377F623494E01000C6009 /* SceneDelegate.swift */,
-				68D3780923494F70000C6009 /* SpeechHelper.swift */,
+				68400B8A234BFF1700F9BA76 /* SpeechRecognitionButton.swift */,
+				68D3780923494F70000C6009 /* SpeechRecognitionHelper.swift */,
 				68D3780823494F70000C6009 /* SpeechViewController.swift */,
-				68752973234BA5D80057A2CC /* UIView+round.swift */,
+				68752975234BBB350057A2CC /* SpeechViewController+Recognition.swift */,
+				68752977234BBBAD0057A2CC /* TrafficLightIndicator.swift */,
 				68D377FD23494E03000C6009 /* Assets.xcassets */,
 				68D377FF23494E03000C6009 /* LaunchScreen.storyboard */,
 				68D377FA23494E01000C6009 /* Main.storyboard */,
@@ -132,6 +151,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				68D3780123494E03000C6009 /* LaunchScreen.storyboard in Resources */,
+				6875A51D234E61AF00EEF659 /* img1.jpg in Resources */,
 				68D377FE23494E03000C6009 /* Assets.xcassets in Resources */,
 				68D377FC23494E01000C6009 /* Main.storyboard in Resources */,
 			);
@@ -144,10 +164,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68752978234BBBAD0057A2CC /* TrafficLightIndicator.swift in Sources */,
+				68752976234BBB350057A2CC /* SpeechViewController+Recognition.swift in Sources */,
 				68D3780A23494F70000C6009 /* SpeechViewController.swift in Sources */,
-				68752974234BA5D80057A2CC /* UIView+round.swift in Sources */,
 				68D377F523494E01000C6009 /* AppDelegate.swift in Sources */,
-				68D3780B23494F70000C6009 /* SpeechHelper.swift in Sources */,
+				68400B8B234BFF1700F9BA76 /* SpeechRecognitionButton.swift in Sources */,
+				68D3780B23494F70000C6009 /* SpeechRecognitionHelper.swift in Sources */,
 				68D377F723494E01000C6009 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
