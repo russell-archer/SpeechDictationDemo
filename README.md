@@ -58,7 +58,7 @@ ___
 
 ## References
 
-https://developer.apple.com/documentation/speech/recognizing_speech_in_live_audio
-https://nshipster.com/ios-13/
-https://www.hackingwithswift.com/example-code/libraries/how-to-convert-speech-to-text-using-sfspeechrecognizer
+* https://developer.apple.com/documentation/speech/recognizing_speech_in_live_audio
+* https://nshipster.com/ios-13/
+* https://www.hackingwithswift.com/example-code/libraries/how-to-convert-speech-to-text-using-sfspeechrecognizer
 
